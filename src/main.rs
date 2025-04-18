@@ -31,5 +31,7 @@ fn main() {
     // ===Check the number of books in the library ===//
     println!("Number of books in library: {}", library.books.len());
 
-    println!("{:?}", library.books[0])
+    // println!("{:?}", library.books[0])
+
+    println!("Books {:?}",library.all_books());
 }
