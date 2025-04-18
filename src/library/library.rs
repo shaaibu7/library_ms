@@ -45,6 +45,22 @@ impl LibraryTrait for Library<Book, Member> {
         false
     }
 
+    fn return_book(&mut self, member: Member, book: Book) -> bool {
+        //=== Check if member exists ===//
+        if !self.members.iter().any(|m| m.id == member.id) {
+            return false;
+        }
+        //=== Find book and change status ===//
+        for bk in &mut self.books {
+            if bk.isbn == book.isbn && bk.status == BookStatus::Borrowed {
+                bk.status = BookStatus::Available;
+                return true;
+            }
+        }
+
+        false
+    }
+
 }
         
 
