@@ -1,6 +1,8 @@
 use crate::library::types::Types::{Book, BookStatus};
 
 pub mod traits {
+    use crate::library::types::Types::Member;
+
     use super::*;
 
     pub trait BookTrait {
@@ -9,5 +11,6 @@ pub mod traits {
 
     pub trait LibraryTrait {
         fn add_book(&mut self, book: Book) -> bool;
+        fn add_member(&mut self, member: Member) -> bool;
     }
 }

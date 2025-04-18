@@ -31,5 +31,15 @@ fn main() {
     // ===Check the number of books in the library ===//
     println!("Number of books in library: {}", library.books.len());
 
-    println!("{:?}", library.books[0])
+    println!("{:?}", library.books[0]);
+
+    let member = Member { name: "suleiman".to_owned(), id: 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
+
+    let member_success = library.add_member(member);
+
+    println!("The result of adding members to library is: {}", member_success);
+
+    println!("The members in this library is: {:?}", library.members[0]);
+
+
 }

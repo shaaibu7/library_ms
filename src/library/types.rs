@@ -1,4 +1,5 @@
 pub mod Types {
+    #[derive(Debug)]
     pub struct Member {
         pub name: String,
         pub id: u16,
@@ -22,6 +23,7 @@ pub mod Types {
         UnderMaintenance,
     }
 
+    #[derive(Debug)]
     pub enum MembershipType {
         Student,
         NonStudents,
