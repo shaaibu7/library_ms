@@ -80,4 +80,17 @@ fn main() {
     }
 
     println!("Status of the book after borrowing: {:?}", library.books[0]);
+
+    //=== return book ==//
+    let member_to_return = library.members[0].clone();
+    let book_to_return = library.books[0].clone();
+
+    let success = library.return_book(member_to_return, book_to_return);
+    if success {
+        println!("Book returned successfully!");
+    } else {
+        println!("Failed to return book!");
+    }
+    
+    println!("Status of the book after returning: {:?}", library.books[0]);
 }

@@ -19,5 +19,7 @@ pub mod traits {
 
         fn add_member(&mut self, member: Member) -> bool;
         fn borrow_book(&mut self, member: Member, book: Book) -> bool;
+        
+        fn return_book(&mut self, member: Member, book: Book) -> bool;
     }
 }
