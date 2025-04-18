@@ -10,6 +10,7 @@ impl LibraryTrait for Library<Book, Member> {
         true
     }
 
+
     fn all_books(&self) ->Option<&Vec<Book>>
     {
         if &self.books.len() > &0 {
@@ -18,6 +19,15 @@ impl LibraryTrait for Library<Book, Member> {
         None
     }
             
+    fn add_member(&mut self, member: Member) -> bool {
+        if self.members.iter().any(|m| m.id == member.id) {
+            return false;
+        }
+
+        self.members.push(member);
+        true
+    }
+
 }
         
 

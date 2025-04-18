@@ -1,7 +1,10 @@
 use crate::library::types::Types::{Book, BookStatus};
 
 pub mod traits {
+
     use std::io::StderrLock;
+    use crate::library::types::Types::Member;
+
 
     use super::*;
 
@@ -11,6 +14,10 @@ pub mod traits {
 
     pub trait LibraryTrait {
         fn add_book(&mut self, book: Book) -> bool;
+
         fn all_books(&self) -> Option<&Vec<Book>>;
+
+        fn add_member(&mut self, member: Member) -> bool;
+
     }
 }
