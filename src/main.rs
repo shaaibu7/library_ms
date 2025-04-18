@@ -38,19 +38,46 @@ fn main() {
 
     println!("{:?}", library.books[0]);
 
-    let member = Member { name: "suleiman".to_owned(), id: (library.members.len() as u16) + 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
+    let member = Member {
+        name: "suleiman".to_owned(),
+        id: (library.members.len() as u16) + 1,
+        phone_no: "+2348012334311".to_owned(),
+        address: "old airport".to_owned(),
+    };
 
     let member_success = library.add_member(member);
 
-    let member2 = Member { name: "suleiman".to_owned(), id: (library.members.len() as u16) + 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
+    let member2 = Member {
+        name: "suleiman".to_owned(),
+        id: (library.members.len() as u16) + 1,
+        phone_no: "+2348012334311".to_owned(),
+        address: "old airport".to_owned(),
+    };
 
     let member_success2 = library.add_member(member2);
 
-    println!("The result of adding members to library is: {}", member_success);
-    println!("The result of adding members to library is: {}", member_success2);
+    println!(
+        "The result of adding members to library is: {}",
+        member_success
+    );
+    println!(
+        "The result of adding members to library is: {}",
+        member_success2
+    );
 
     println!("The members in this library is: {:?}", library.members[0]);
     println!("The members in this library is: {:?}", library.members[1]);
 
+    //=== borrow book ==//
+    let member_to_borrow = library.members[0].clone();
+    let book_to_borrow = library.books[0].clone();
 
+    let success = library.borrow_book(member_to_borrow, book_to_borrow);
+    if success {
+        println!("Book borrowed successfully!");
+    } else {
+        println!("Failed to borrow book!");
+    }
+
+    println!("Status of the book after borrowing: {:?}", library.books[0]);
 }

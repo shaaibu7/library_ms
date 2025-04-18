@@ -18,6 +18,6 @@ pub mod traits {
         fn all_books(&self) -> Option<&Vec<Book>>;
 
         fn add_member(&mut self, member: Member) -> bool;
-
+        fn borrow_book(&mut self, member: Member, book: Book) -> bool;
     }
 }
