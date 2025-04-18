@@ -12,5 +12,6 @@ pub mod traits {
     pub trait LibraryTrait {
         fn add_book(&mut self, book: Book) -> bool;
         fn add_member(&mut self, member: Member) -> bool;
+        fn borrow_book(&mut self, member: Member, book: Book, duration: u16) -> bool;
     }
 }

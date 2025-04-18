@@ -1,5 +1,5 @@
 pub mod Types {
-    #[derive(Debug)]
+    #[derive(Debug, Clone)]
     pub struct Member {
         pub name: String,
         pub id: u16,
@@ -7,7 +7,7 @@ pub mod Types {
         pub address: String,
     }
 
-    #[derive(Debug)]
+    #[derive(Debug, Clone)]
     pub struct Book {
         pub title: String,
         pub isbn: String,
@@ -16,7 +16,7 @@ pub mod Types {
         pub status: BookStatus,
     }
 
-    #[derive(Debug)]
+    #[derive(Debug, PartialEq, Clone)]
     pub enum BookStatus {
         Available,
         Borrowed,
@@ -24,6 +24,7 @@ pub mod Types {
     }
 
     #[derive(Debug)]
+
     pub enum MembershipType {
         Student,
         NonStudents,
