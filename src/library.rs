@@ -1,3 +1,4 @@
-pub mod types;
-pub mod traits;
 pub mod book;
+pub mod library;
+pub mod traits;
+pub mod types;

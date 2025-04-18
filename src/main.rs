@@ -1,16 +1,7 @@
-
 mod library;
 
-use crate::library::types::Types::{
-    Member,
-    Book,
-    BookStatus,
-    Library
-};
-use crate::library::traits::traits::{
-    BookTrait,
-    LibraryTrait
-};
+use crate::library::traits::traits::{BookTrait, LibraryTrait};
+use crate::library::types::Types::{Book, BookStatus, Library, Member};
 
 fn main() {
     // ==== Initialize a book =====//
@@ -21,22 +12,24 @@ fn main() {
         2005,
         BookStatus::Available,
     );
-    
+
     // ===== Initialize an empty library ====== //
     let mut library: Library<Book, Member> = Library {
         books: Vec::new(),
-        members: Vec::new()
+        members: Vec::new(),
     };
-    
+
     // ===Add the book using the trait method ====//
     let success = library.add_book(book1);
-    
+
     if success {
         println!("Book added successfully!");
     } else {
         println!("Failed to add book!");
     }
-    
+
     // ===Check the number of books in the library ===//
     println!("Number of books in library: {}", library.books.len());
+
+    println!("{:?}", library.books[0])
 }
