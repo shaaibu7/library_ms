@@ -33,13 +33,19 @@ fn main() {
 
     println!("{:?}", library.books[0]);
 
-    let member = Member { name: "suleiman".to_owned(), id: 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
+    let member = Member { name: "suleiman".to_owned(), id: (library.members.len() as u16) + 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
 
     let member_success = library.add_member(member);
 
+    let member2 = Member { name: "suleiman".to_owned(), id: (library.members.len() as u16) + 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
+
+    let member_success2 = library.add_member(member2);
+
     println!("The result of adding members to library is: {}", member_success);
+    println!("The result of adding members to library is: {}", member_success2);
 
     println!("The members in this library is: {:?}", library.members[0]);
+    println!("The members in this library is: {:?}", library.members[1]);
 
 
 }
