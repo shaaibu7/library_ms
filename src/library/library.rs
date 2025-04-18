@@ -10,6 +10,15 @@ impl LibraryTrait for Library<Book, Member> {
         true
     }
 
+
+    fn all_books(&self) ->Option<&Vec<Book>>
+    {
+        if &self.books.len() > &0 {
+          return  Some(&self.books)
+        }
+        None
+    }
+            
     fn add_member(&mut self, member: Member) -> bool {
         if self.members.iter().any(|m| m.id == member.id) {
             return false;
@@ -19,6 +28,7 @@ impl LibraryTrait for Library<Book, Member> {
         true
     }
 
+
     fn borrow_book(&mut self, member: Member, book: Book) -> bool {
         //=== Check if member exists ===//
         if !self.members.iter().any(|m| m.id == member.id) {
@@ -26,7 +36,7 @@ impl LibraryTrait for Library<Book, Member> {
         }
         //=== Find book and change status ===//
         for bk in &mut self.books {
-            if bk.isbn == bk.isbn && book.status == BookStatus::Available {
+            if bk.isbn == book.isbn && bk.status == BookStatus::Available {
                 bk.status = BookStatus::Borrowed;
                 return true;
             }
@@ -34,4 +44,8 @@ impl LibraryTrait for Library<Book, Member> {
 
         false
     }
+
 }
+        
+
+
