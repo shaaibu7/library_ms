@@ -31,6 +31,11 @@ fn main() {
     // ===Check the number of books in the library ===//
     println!("Number of books in library: {}", library.books.len());
 
+
+    // println!("{:?}", library.books[0])
+
+    println!("Books {:?}",library.all_books());
+
     println!("{:?}", library.books[0]);
 
     let member = Member { name: "suleiman".to_owned(), id: (library.members.len() as u16) + 1, phone_no: "+2348012334311".to_owned(), address: "old airport".to_owned() };
