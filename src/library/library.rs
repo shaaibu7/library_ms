@@ -9,4 +9,13 @@ impl LibraryTrait for Library<Book, Member> {
         self.books.push(book);
         true
     }
+
+    fn add_member(&mut self, member: Member) -> bool {
+        if self.members.iter().any(|m| m.id == member.id) {
+            return false;
+        }
+
+        self.members.push(member);
+        true
+    }
 }
