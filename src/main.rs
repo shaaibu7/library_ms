@@ -63,12 +63,11 @@ fn main() {
     println!("The members in this library is: {:?}", library.members[0]);
     println!("The members in this library is: {:?}", library.members[1]);
 
-
     //=== borrow book ==//
     let member_to_borrow = library.members[0].clone();
     let book_to_borrow = library.books[0].clone();
 
-    let success = library.borrow_book(member_to_borrow, book_to_borrow, 14);
+    let success = library.borrow_book(member_to_borrow, book_to_borrow);
     if success {
         println!("Book borrowed successfully!");
     } else {
@@ -76,5 +75,4 @@ fn main() {
     }
 
     println!("Status of the book after borrowing: {:?}", library.books[0]);
-
 }

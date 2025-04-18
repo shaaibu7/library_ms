@@ -19,15 +19,15 @@ impl LibraryTrait for Library<Book, Member> {
         true
     }
 
-    fn borrow_book(&mut self, member: Member, book: Book, _duration: u16) -> bool {
+    fn borrow_book(&mut self, member: Member, book: Book) -> bool {
         //=== Check if member exists ===//
         if !self.members.iter().any(|m| m.id == member.id) {
             return false;
         }
         //=== Find book and change status ===//
-        for book in &mut self.books {
-            if book.isbn == book.isbn && book.status == BookStatus::Available {
-                book.status = BookStatus::Borrowed;
+        for bk in &mut self.books {
+            if bk.isbn == bk.isbn && book.status == BookStatus::Available {
+                bk.status = BookStatus::Borrowed;
                 return true;
             }
         }
